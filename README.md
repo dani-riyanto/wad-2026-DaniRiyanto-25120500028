@@ -72,6 +72,11 @@ python verify.py --sesi 2
 `verify.py` adalah **perintah yang sama persis** yang dipakai dosen untuk memeriksa artefakmu.
 Kalau hijau di laptopmu, hijau juga saat dinilai. Jalankan sebelum kamu keluar dari sesi.
 
+> **CI merah saat repo baru itu normal.** Pemeriksa berjalan juga di GitHub Actions, dan pada
+> repo kosong ia memang gagal — belum ada `frontend/` dan `backend/`. **Membuatnya hijau adalah
+> tugasmu malam ini.** Ketentuan 7 (CI merah = 0 fungsionalitas) dinilai pada akhir sesi, bukan
+> pada commit pertama.
+
 Verifikasi manual yang juga dinilai:
 
 - `http://localhost:5173` — halaman kerangka muncul, masih rapi di lebar 360px
