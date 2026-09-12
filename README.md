@@ -16,6 +16,44 @@ pemeriksa nilai.
 
 ---
 
+## 0. Membuat repo kelompok (sekali saja, di Sesi 2)
+
+Ini **administratif**, bukan tugas — sama seperti membawa laptop. Dikerjakan **ketua kelompok**,
+sekali, di awal lab.
+
+```bash
+# 1. Di GitHub: buka repo template ini, klik "Use this template" -> "Create a new repository"
+#    Nama repo : wad-2026-kNN     (NN = nomor kelompokmu, contoh wad-2026-k04)
+#    Visibility: PUBLIC           (wajib — branch protection tidak tersedia di repo privat gratis)
+
+# 2. Tambahkan 3 anggota lain sebagai collaborator
+#    Settings -> Collaborators -> Add people   (pakai username GitHub mereka)
+
+# 3. Semua anggota clone repo KELOMPOK, bukan template-nya
+git clone https://github.com/<username-ketua>/wad-2026-kNN
+cd wad-2026-kNN
+cp .env.example .env
+```
+
+**4. Lindungi `main`** — ini butir 1 rubrik malam ini, dan dilakukan ketua:
+
+> Settings → Branches → **Add branch protection rule**
+> - Branch name pattern: `main`
+> - ☑ **Require a pull request before merging**
+> - ☑ **Do not allow bypassing the above settings**
+> - Save changes
+
+Setelah itu `git push` langsung ke `main` akan ditolak. Itu memang tujuannya. Semua perubahan
+lewat branch `feature/*` dan pull request.
+
+> "Require approvals" **jangan** dinyalakan malam ini — undangan collaborator mungkin belum
+> diterima semua anggota, dan kamu akan terkunci tidak bisa merge. Naikkan ke 1 approval di
+> Sesi 3, setelah semua anggota masuk.
+
+**5. Kirim URL repo kelompokmu ke thread RISE.** Tanpa itu dosen tidak tahu ke mana harus menilai.
+
+---
+
 ## 1. Prasyarat
 
 | Alat | Versi | Cek |
@@ -92,6 +130,8 @@ Verifikasi manual yang juga dinilai:
 | `/health` 404 | `app.main` bukan modul yang dijalankan | jalankan `uvicorn` dari dalam folder `backend/` |
 | CI merah karena `secret-scan` | ada rahasia ter-commit | **hapus nilainya, rotasi, commit ulang** — lihat Ketentuan 8 di bawah |
 | `venv/` ikut ter-commit | `.gitignore` diubah | kembalikan `.gitignore` bawaan repo |
+| Menu **Branches → Add rule** tidak ada | repo dibuat **Private** | Settings → General → Danger Zone → **Change visibility → Public** |
+| Tidak bisa merge PR sendiri | "Require approvals" sudah dinyalakan | matikan dulu malam ini (lihat bagian 0 langkah 4) |
 
 ---
 
