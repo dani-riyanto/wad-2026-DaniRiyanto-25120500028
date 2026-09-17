@@ -1,6 +1,1 @@
-{
-  "name": "frontend",
-  "version": "1.0.0",
-  "private": true,
-  "dependencies": {}
-}
+{"name": "frontend", "version": "1.0.0", "private": true, "scripts": {"dev": "vite"}, "dependencies": {}}
